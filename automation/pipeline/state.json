@@ -1,8 +1,8 @@
 {
   "channel_handle": "@WhereMyDollarGo",
   "initialized_at": "2026-11-10T01:40:00Z",
-  "next_topic_index": 1,
-  "last_run_utc": null,
+  "next_topic_index": 2,
+  "last_run_utc": "2026-11-09T20:24:04.743691+00:00",
   "total_generated": 1,
   "scheduled_slots": {
     "2026-11-10_slot1": {
@@ -12,6 +12,15 @@
       "publish_at": "2026-11-10T16:00:00Z",
       "status": "QUEUED_LOCAL",
       "youtube_id": null
+    },
+    "2026-11-09_slot2_Evening_Prime_Peak_1830ET": {
+      "topic_id": "short_002_gas_money",
+      "title": "Where Does $100 of Gas Money Actually Go?",
+      "style": "Data Storytelling",
+      "publish_at": "2026-11-09T23:30:00Z",
+      "youtube_id": null,
+      "status": "STAGED",
+      "scheduled_at": "2026-11-09T20:24:04.743679+00:00"
     }
   },
   "weekly_history": []
