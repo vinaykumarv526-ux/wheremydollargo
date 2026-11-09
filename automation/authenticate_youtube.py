@@ -32,11 +32,11 @@ def authenticate_and_sync_secrets():
     client_id = app_info.get("client_id")
     client_secret = app_info.get("client_secret")
 
-    print("==================================================================")
-    print("  WhereMyDollarGo: YouTube Channel One-Time Cloud Authorization  ")
-    print("==================================================================")
-    print(f"Client ID: {client_id[:20]}...")
-    print("Launching browser for YouTube authorization...")
+    print("==================================================================", flush=True)
+    print("  WhereMyDollarGo: YouTube Channel One-Time Cloud Authorization  ", flush=True)
+    print("==================================================================", flush=True)
+    print(f"Client ID: {client_id[:20]}...", flush=True)
+    print("Launching browser for YouTube authorization...", flush=True)
 
     flow = InstalledAppFlow.from_client_secrets_file(str(CLIENT_SECRET_FILE), SCOPES)
     creds = flow.run_local_server(port=0, prompt="consent", access_type="offline")
