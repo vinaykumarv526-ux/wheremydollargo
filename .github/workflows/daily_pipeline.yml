@@ -2,8 +2,9 @@ name: WhereMyDollarGo Daily Autonomous Production Pipeline
 
 on:
   schedule:
-    # Runs twice daily at 06:00 UTC and 16:00 UTC to maintain 2-day buffer & daily carousel
-    - cron: '0 6,16 * * *'
+    # Runs in cloud at 11:00 UTC (7:00 AM ET) and 21:00 UTC (5:00 PM ET)
+    # Staging & scheduling directly ahead of US Midday (12:30 PM ET) and Prime Evening (6:30 PM ET) peaks
+    - cron: '0 11,21 * * *'
   workflow_dispatch:
     inputs:
       slots_to_generate:
@@ -32,7 +33,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests google-auth-oauthlib google-api-python-client
 
-      - name: Run Buffer Scheduler & Daily Content Pipeline
+      - name: Run Buffer Scheduler & Daily Content Pipeline (Peak Timing)
         env:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -50,5 +51,5 @@ jobs:
           git config user.name "WhereMyDollarGo Bot"
           git config user.email "bot@users.noreply.github.com"
           git add publish-queue/ automation/pipeline/state.json styles-used.md sources.md
-          git commit -m "chore(pipeline): automated daily content generation [skip ci]" || echo "No changes to commit"
+          git commit -m "chore(pipeline): automated US peak content generation [skip ci]" || echo "No changes to commit"
           git push origin main
