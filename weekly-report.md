@@ -3,14 +3,18 @@
 ## 1. System Health & Autonomous Status
 - **Cloud Pipeline**: Online & Active (GitHub Actions)
 - **Channel**: `@WhereMyDollarGo`
-- **Total Content Slots Managed**: 1
-- **Videos Published to YouTube**: 0
-- **Ready in Publish Queue**: 1
+- **Total Content Slots Managed**: 5
+- **Videos Published to YouTube**: 3
+- **Ready in Publish Queue**: 2
 
 ## 2. Recent Production Slots & Visual Styles
 | Slot Date | Title | Visual Style | Status |
 |---|---|---|---|
 | 2026-11-10 | Where Does $100 of Your Paycheck Actually Go? | Isometric Infographic | 📦 Staged in Repo |
+| 2026-11-09 | Where Does $100 of Gas Money Actually Go? | Data Storytelling | 📦 Staged in Repo |
+| short_001_ | Where Does  of Your Paycheck Actually Go? | None | ✅ Live on YouTube |
+| short_002_ | Where Does  of Gas Money Actually Go? | None | ✅ Live on YouTube |
+| short_003_ | Deductible vs Out-of-Pocket Max in 40 Seconds | None | ✅ Live on YouTube |
 
 ## 3. Next Week's Upcoming Queue
 The autonomous pipeline has pre-loaded upcoming finance topics in `topics.json`.
