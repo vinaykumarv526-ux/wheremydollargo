@@ -1,153 +1,272 @@
 {
   "channel": "@WhereMyDollarGo",
-  "tagline": "Every dollar, explained.",
+  "tagline": "Finance & Economics Explained in Plain English.",
+  "format": "Foundational Explainer Series (What is X? / How X Works)",
   "topics": [
     {
-      "id": "short_001_paycheck",
-      "title": "Where Does $100 of Your Paycheck Actually Go?",
-      "hook": "You just earned $100. But before it touches your bank account, where did $24 instantly vanish?",
-      "style": "Isometric Infographic",
-      "breakdown": {
-        "gross": "$100.00",
-        "social_security": "$6.20",
-        "medicare": "$1.45",
-        "federal_income_tax": "$10.50",
-        "state_tax": "$4.50",
-        "net_pay": "$77.35"
-      },
-      "takeaway": "Mandatory FICA is distinct from progressive income tax.",
-      "disclaimer": "General education, not financial, tax, legal or insurance advice.",
-      "tags": ["paycheck", "taxes", "fica", "wheremydollargo", "personalfinance", "shorts"]
+      "id": "explainer_001_what_is_a_tax",
+      "title": "What is a Tax? (Explained in 40 Seconds)",
+      "hook": "What actually is a tax, and why does almost every government on Earth collect one?",
+      "script": "What actually is a tax? Think of a country like a giant apartment building. Everyone needs clean water, working elevators, security, and repairs in the hallways. But no single tenant wants to pay the entire bill alone. Taxes are simply the subscription fee you pay to live in a civilized society. When you work, you pay Income Tax. When you buy a coffee, you pay Sales Tax. And when you own a house, you pay Property Tax. That pooled money funds everything from public roads and firefighters to schools and national defense. Subscribe to WhereMyDollarGo for daily finance explainers!",
+      "scenes": [
+        {
+          "title": "What is a Tax?",
+          "subtitle": "The Subscription Fee of Society",
+          "metric_label": "The Core Concept",
+          "metric_val": "Pooled Cost",
+          "details": [
+            "Think of a country like a giant apartment building",
+            "Everyone uses roads, bridges, and defense",
+            "Taxes are the shared community maintenance fee"
+          ]
+        },
+        {
+          "title": "The 3 Main Buckets of Taxes",
+          "subtitle": "How Governments Collect Money",
+          "metric_label": "Where It Comes From",
+          "metric_val": "3 Pillars",
+          "details": [
+            "1. Income Tax: Taken when you earn money",
+            "2. Sales Tax: Paid when you buy goods & services",
+            "3. Property Tax: Paid on land and real estate"
+          ]
+        },
+        {
+          "title": "Where Does the Tax Money Go?",
+          "subtitle": "What Your Dollars Actually Build",
+          "metric_label": "Public Infrastructure",
+          "metric_val": "100% Public",
+          "details": [
+            "Paved highways, clean water systems, and parks",
+            "Police, firefighters, and emergency response",
+            "Public schools, courts, and national security"
+          ]
+        },
+        {
+          "title": "The Golden Takeaway",
+          "subtitle": "Remember This Simple Truth",
+          "metric_label": "Core Definition",
+          "metric_val": "Shared Value",
+          "details": [
+            "Taxes aren't a penalty; they are a collective pool",
+            "Without taxes, every citizen would have to build their own roads",
+            "Follow the money with @WhereMyDollarGo"
+          ]
+        }
+      ],
+      "tags": ["whatisatax", "taxesexplained", "personalfinance", "economics", "wheremydollargo", "shorts"]
     },
     {
-      "id": "short_002_gas_money",
-      "title": "Where Does $100 of Gas Money Actually Go?",
-      "hook": "You just pumped $100 into your tank. How much did the gas station actually pocket?",
-      "style": "Data Storytelling",
-      "breakdown": {
-        "crude_oil": "$52.00",
-        "refining_costs": "$19.00",
-        "federal_state_taxes": "$15.00",
-        "distribution_station_margin": "$14.00",
-        "station_actual_profit": "< $2.00"
-      },
-      "takeaway": "Gas stations make their profit selling snacks and drinks, not on the fuel pump.",
-      "disclaimer": "General education, not financial advice.",
-      "tags": ["gasprices", "economy", "moneybreakdown", "wheremydollargo", "shorts"]
+      "id": "explainer_002_what_is_stock_market",
+      "title": "What is the Stock Market? (The Pizza Analogy)",
+      "hook": "What actually is the stock market, and why does everyone keep talking about it?",
+      "script": "What actually is the stock market? Imagine your friend starts a pizza shop. Business is booming, and they want to open ten more shops, but they need one million dollars. Instead of taking a giant bank loan, they slice their business into one million tiny pieces called shares, and sell each share for one dollar. The stock market is simply the digital grocery store where people buy and sell those tiny slices of real businesses. If the pizza shop grows, each slice becomes worth five dollars. If it fails, the slices become worthless. Subscribe to WhereMyDollarGo!",
+      "scenes": [
+        {
+          "title": "What is the Stock Market?",
+          "subtitle": "The Pizza Shop Analogy",
+          "metric_label": "The Core Concept",
+          "metric_val": "Tiny Slices",
+          "details": [
+            "A business wants to expand and grow",
+            "Instead of bank loans, it slices ownership into shares",
+            "Each share is legal partial ownership of the company"
+          ]
+        },
+        {
+          "title": "Why Does the Stock Market Exist?",
+          "subtitle": "A Public Supermarket for Companies",
+          "metric_label": "The Exchange",
+          "metric_val": "Buyers + Sellers",
+          "details": [
+            "Companies get cash today to build products & hire workers",
+            "Everyday people get to own pieces of giant companies",
+            "Traded transparently on exchanges like NYSE and Nasdaq"
+          ]
+        },
+        {
+          "title": "How Do Investors Make Money?",
+          "subtitle": "Two Primary Methods",
+          "metric_label": "Value Growth",
+          "metric_val": "Profits & Growth",
+          "details": [
+            "1. Capital Gains: Buy a share at $10, sell at $25",
+            "2. Dividends: The company shares quarterly profit payouts",
+            "If the business succeeds, shareholders prosper"
+          ]
+        },
+        {
+          "title": "The Golden Takeaway",
+          "subtitle": "Demystifying Wall Street",
+          "metric_label": "Summary Definition",
+          "metric_val": "Real Ownership",
+          "details": [
+            "A stock is not a lottery ticket; it is a slice of a company",
+            "The market is just where those slices change hands",
+            "Follow along at @WhereMyDollarGo"
+          ]
+        }
+      ],
+      "tags": ["stockmarket", "investingforbeginners", "whatisastock", "stocks", "wheremydollargo", "shorts"]
     },
     {
-      "id": "short_003_deductible_vs_max",
-      "title": "Deductible vs Out-of-Pocket Max in 40 Seconds",
-      "hook": "Most people think hitting their deductible means 100% free medical care. That misunderstanding costs thousands.",
-      "style": "Swiss Motion Graphics",
-      "breakdown": {
-        "stage_1": "Deductible: You pay 100% until you reach this threshold.",
-        "stage_2": "Coinsurance: Insurer splits bill (e.g. 80/20) up to the max.",
-        "stage_3": "Out-of-Pocket Max: Insurer finally covers 100% of covered in-network claims."
-      },
-      "takeaway": "Your deductible is the starting line for coverage; your out-of-pocket maximum is the actual finish line.",
-      "disclaimer": "General education only, not insurance advice.",
-      "tags": ["insurance", "healthcare", "deductible", "moneytips", "wheremydollargo"]
+      "id": "explainer_003_what_is_a_trade",
+      "title": "What is a Trade in the Stock Market?",
+      "hook": "What actually is a trade, and how does two strangers agreeing on a price make a market?",
+      "script": "What actually is a financial trade? A trade is simply an agreement between two people who disagree on the future. Imagine you own one share of Apple. You think Apple has reached its peak and might drop, so you want to sell it for two hundred dollars. Somewhere across the world, a stranger believes Apple is about to release a revolutionary product and will climb to three hundred dollars, so they want to buy it for two hundred dollars. When your asking price matches their bidding price, a trade occurs. Every single trade requires one buyer and one seller. Subscribe to WhereMyDollarGo!",
+      "scenes": [
+        {
+          "title": "What is a Trade?",
+          "subtitle": "Two Opposite Opinions Meeting",
+          "metric_label": "The Core Mechanism",
+          "metric_val": "The Agreement",
+          "details": [
+            "Every trade has exactly one buyer and one seller",
+            "The Seller thinks: 'The price is high enough, I'll take cash'",
+            "The Buyer thinks: 'The price will rise, I want ownership'"
+          ]
+        },
+        {
+          "title": "The Bid and The Ask",
+          "subtitle": "How Prices Are Discovered",
+          "metric_label": "Price Discovery",
+          "metric_val": "Bid vs Ask",
+          "details": [
+            "Bid: The highest price a buyer is willing to pay",
+            "Ask: The lowest price a seller is willing to accept",
+            "The spread between them is where the market trades"
+          ]
+        },
+        {
+          "title": "Why Millions of Trades Happen Daily",
+          "subtitle": "Continuous Auction in Real Time",
+          "metric_label": "Market Liquidity",
+          "metric_val": "Instant Match",
+          "details": [
+            "Electronic algorithms match matching bids and asks in milliseconds",
+            "No human phone calls needed anymore",
+            "Billions of dollars change hands frictionlessly"
+          ]
+        },
+        {
+          "title": "The Golden Takeaway",
+          "subtitle": "The Philosophy of Trading",
+          "metric_label": "Market Truth",
+          "metric_val": "Opposite Views",
+          "details": [
+            "A trade only happens when two people disagree on value",
+            "Both walk away happy with the price they locked in",
+            "Subscribe to @WhereMyDollarGo"
+          ]
+        }
+      ],
+      "tags": ["whatisatrade", "tradingexplained", "stocktrading", "investing101", "wheremydollargo"]
     },
     {
-      "id": "short_004_health_premium_mlr",
-      "title": "Where Does Your Health Insurance Premium Go?",
-      "hook": "Federal law legally forces health insurance companies to spend 80 to 85 cents of every dollar you pay on one thing.",
-      "style": "Pictogram Motion",
-      "breakdown": {
-        "clinical_care_quality": "80% to 85%",
-        "admin_marketing_profit": "15% to 20%",
-        "aca_80_20_rule": "Medical Loss Ratio threshold triggers refund checks if violated."
-      },
-      "takeaway": "If an insurer spends less than 80% on actual patient care, they must mail you a rebate check.",
-      "disclaimer": "General education only, not insurance advice.",
-      "tags": ["insurancepremium", "healthcare", "mlr", "wheremydollargo", "shorts"]
+      "id": "explainer_004_how_a_trade_is_done",
+      "title": "How a Trade is Actually Done (Behind the Scenes)",
+      "hook": "You tap the green 'Buy' button on your investing app. What actually happens in the next 3 seconds?",
+      "script": "You open Robinhood or Schwab, tap Buy, and hear a little chime. What actually happened behind your phone screen? In under one second, your broker routes your order to an electronic market maker or stock exchange like the Nasdaq. High-speed computers scan millions of sell orders to find someone selling that exact stock at your price. The moment a match is found, your cash is locked, and the shares appear in your portfolio. Behind the scenes, a centralized clearinghouse officially transfers legal ownership in two business days. Subscribe to WhereMyDollarGo!",
+      "scenes": [
+        {
+          "title": "How a Trade is Actually Done",
+          "subtitle": "Behind Your Phone Screen",
+          "metric_label": "Step 1: The Order",
+          "metric_val": "Tap 'Buy'",
+          "details": [
+            "You enter your order on an app (Robinhood, Fidelity, Schwab)",
+            "Your app sends an encrypted order signal to the broker",
+            "Takes less than 50 milliseconds"
+          ]
+        },
+        {
+          "title": "Step 2: The Exchange & Market Maker",
+          "subtitle": "Matching the Buyer and Seller",
+          "metric_label": "Order Execution",
+          "metric_val": "< 10 Milliseconds",
+          "details": [
+            "Order routed to exchanges (NYSE/Nasdaq) or Market Makers",
+            "High-frequency algorithms match your bid to a seller's ask",
+            "Trade executes instantly at best available price"
+          ]
+        },
+        {
+          "title": "Step 3: The Clearinghouse (Settlement)",
+          "subtitle": "The Official Transfer of Title",
+          "metric_label": "T+1 Settlement",
+          "metric_val": "Next Day",
+          "details": [
+            "Shares show in your app instantly as credited",
+            "Official legal transfer settled via DTCC clearinghouse",
+            "Cash moves from your account; legal stock certificate registered"
+          ]
+        },
+        {
+          "title": "The Golden Takeaway",
+          "subtitle": "A Miracle of Modern Computing",
+          "metric_label": "Speed & Security",
+          "metric_val": "Instant Global",
+          "details": [
+            "From your pocket to global financial clearinghouses in seconds",
+            "Fully regulated by SEC and FINRA rules",
+            "Demystify Wall Street with @WhereMyDollarGo"
+          ]
+        }
+      ],
+      "tags": ["howtradeisdone", "stockmarketbasics", "robinhoodexplained", "fintech", "wheremydollargo"]
     },
     {
-      "id": "short_005_car_insurance_spike",
-      "title": "Why Car Insurance Rates Spike (Even With Zero Tickets)",
-      "hook": "Zero accidents, zero speeding tickets, pristine record—yet your auto renewal jumped 18%. Why?",
-      "style": "Chalkboard Explainer",
-      "breakdown": {
-        "sensor_bumpers": "+34% average bumper replacement cost due to radar and cameras",
-        "repair_labor_inflation": "+28% body shop technician labor rates",
-        "weather_loss_events": "Hail and flood claims spread across entire zip code rating pools"
-      },
-      "takeaway": "Insurance is a collective pool: you pay for the replacement tech and claim frequency of everyone around you.",
-      "disclaimer": "General education, not insurance advice.",
-      "tags": ["carinsurance", "rates", "auto", "personalfinance", "wheremydollargo"]
-    },
-    {
-      "id": "short_006_mortgage_amortization",
-      "title": "The Mortgage Amortization Curve: Month 1 vs Year 15",
-      "hook": "On your very first $2,000 monthly mortgage payment, how much of your home do you actually own?",
-      "style": "Data Physicalization",
-      "breakdown": {
-        "first_payment_interest": "~$1,700 to bank interest",
-        "first_payment_principal": "~$300 to house equity",
-        "year_15_shift": "Payment gradually flips to majority principal reduction"
-      },
-      "takeaway": "In the early years, you are essentially renting cash from the bank. One extra annual payment cuts years off the loan.",
-      "disclaimer": "General education, not mortgage or financial advice.",
-      "tags": ["mortgage", "housing", "interest", "homeownership", "wheremydollargo"]
-    },
-    {
-      "id": "short_007_credit_score_math",
-      "title": "What Actually Determines Your Credit Score?",
-      "hook": "Closing an old credit card can drop your credit score 30 points overnight. Here is the mathematical reason why.",
-      "style": "Whiteboard Explainer",
-      "breakdown": {
-        "payment_history": "35% (Never miss a due date)",
-        "amounts_owed_utilization": "30% (Keep below 10-30% of total limit)",
-        "length_of_credit_history": "15% (Oldest account age matters)",
-        "credit_mix": "10% (Revolving vs installment loans)",
-        "new_credit_inquiries": "10% (Hard inquiries)"
-      },
-      "takeaway": "Closing old cards cuts your total credit limit and shortens your average history.",
-      "disclaimer": "General education, not credit repair advice.",
-      "tags": ["creditscore", "fico", "creditcard", "finance", "wheremydollargo"]
-    },
-    {
-      "id": "short_008_apr_vs_apy",
-      "title": "APR vs APY: The Hidden Difference Banks Use",
-      "hook": "Notice how banks quote APR when you borrow, but APY when you save? There's a calculated mathematical reason.",
-      "style": "Dark Tech Keynote",
-      "breakdown": {
-        "apr": "Annual Percentage Rate (simple interest, excludes compounding)",
-        "apy": "Annual Percentage Yield (reflects frequency of compounding interest)",
-        "impact": "A 5% APY pays more than a 5% APR over 12 months."
-      },
-      "takeaway": "When borrowing: lower APR is better. When saving: higher APY with daily compounding is better.",
-      "disclaimer": "General education only.",
-      "tags": ["banking", "apr", "apy", "interestrates", "wheremydollargo"]
-    },
-    {
-      "id": "short_009_inflation_cost",
-      "title": "What 3% Inflation Does to $10,000 Over 10 Years",
-      "hook": "Leaving $10,000 cash in a 0.01% checking account feels safe. Mathematically, it is a guaranteed loss.",
-      "style": "Isometric Infographic",
-      "breakdown": {
-        "nominal_value": "$10,000 remains $10,000 on paper",
-        "purchasing_power_loss": "Drops to ~$7,374 in real goods and services",
-        "annual_hidden_tax": "~$260 to $300 in lost purchasing power each year"
-      },
-      "takeaway": "Inflation is the invisible friction fee on cash. High-yield savings or diversified assets protect purchasing power.",
-      "disclaimer": "General education, not investment advice.",
-      "tags": ["inflation", "purchasingpower", "savings", "wheremydollargo"]
-    },
-    {
-      "id": "short_010_fdic_coverage",
-      "title": "Where Is Your Money Really Safe? (FDIC Explained)",
-      "hook": "If your bank collapses on Friday afternoon, is your cash gone on Monday morning?",
-      "style": "Visual Investigation",
-      "breakdown": {
-        "coverage_limit": "$250,000 per depositor, per insured bank, per ownership category",
-        "joint_accounts": "Co-owned accounts protected up to $500,000",
-        "fintech_caution": "Neobanks use partner banks; check if funds are held in sweep accounts."
-      },
-      "takeaway": "Always confirm the FDIC member bank logo; cash in insured banks is backed by the full faith and credit of the US government.",
-      "disclaimer": "General education only.",
-      "tags": ["fdic", "banking", "safety", "money", "wheremydollargo"]
+      "id": "explainer_005_what_is_inflation",
+      "title": "What is Inflation? (The Candy Bar Rule)",
+      "hook": "Why did a movie ticket cost five dollars twenty years ago, but costs fifteen dollars today?",
+      "script": "What actually is inflation? Inflation isn't things getting more expensive; it's your money losing its purchasing power. Imagine there are only ten candy bars on an island, and everyone has a total of ten dollars. Each candy bar costs one dollar. Now imagine a helicopter flies over and drops one hundred dollars onto the island. The number of candy bars didn't change, but now there is way more cash chasing the exact same ten candy bars. Sellers raise their prices to ten dollars. That is inflation: too much money chasing too few goods. Subscribe to WhereMyDollarGo!",
+      "scenes": [
+        {
+          "title": "What is Inflation?",
+          "subtitle": "The Helicopter Money Analogy",
+          "metric_label": "The Core Concept",
+          "metric_val": "Purchasing Power",
+          "details": [
+            "Prices rising is a symptom, not the cause",
+            "The real cause is the dollar purchasing less goods",
+            "Your $100 bill buys fewer groceries each decade"
+          ]
+        },
+        {
+          "title": "The Supply & Demand Imbalance",
+          "subtitle": "Too Much Cash Chasing Too Few Goods",
+          "metric_label": "The Core Equation",
+          "metric_val": "More Dollars",
+          "details": [
+            "When money supply expands faster than goods produced",
+            "Sellers naturally raise prices to match demand",
+            "Supply chain bottlenecks make raw materials scarcer"
+          ]
+        },
+        {
+          "title": "Who Wins and Who Loses?",
+          "subtitle": "The Hidden Wealth Transfer",
+          "metric_label": "Impact on Wealth",
+          "metric_val": "Borrowers vs Savers",
+          "details": [
+            "Losers: People hoarding cash in traditional checking accounts",
+            "Winners: People with fixed-rate debt (paying back in cheaper dollars)",
+            "Protectors: Productive assets like real estate and index funds"
+          ]
+        },
+        {
+          "title": "The Golden Takeaway",
+          "subtitle": "How to Protect Your Dollars",
+          "metric_label": "Wealth Protection",
+          "metric_val": "Beat Inflation",
+          "details": [
+            "Cash in a mattress is guaranteed to lose value over time",
+            "Invest in income-generating assets to stay ahead",
+            "Subscribe to @WhereMyDollarGo"
+          ]
+        }
+      ],
+      "tags": ["whatisinflation", "inflationexplained", "economics101", "moneybasics", "wheremydollargo"]
     }
   ]
 }

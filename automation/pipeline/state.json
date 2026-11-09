@@ -3,7 +3,7 @@
   "initialized_at": "2026-11-10T01:40:00Z",
   "next_topic_index": 2,
   "last_run_utc": "2026-11-09T20:24:04.743691+00:00",
-  "total_generated": 3,
+  "total_generated": 9,
   "scheduled_slots": {
     "2026-11-10_slot1": {
       "topic_id": "short_001_paycheck",
@@ -39,6 +39,30 @@
       "youtube_id": "gtXrnTQA1uA",
       "status": "SCHEDULED_EVENING",
       "url": "https://youtube.com/shorts/gtXrnTQA1uA"
+    },
+    "explainer_001_what_is_a_tax": {
+      "title": "What is a Tax? (Explained in 40 Seconds)",
+      "youtube_id": "L2qV7i3wpCA",
+      "status": "PUBLISHED_NOW",
+      "url": "https://youtube.com/shorts/L2qV7i3wpCA"
+    },
+    "explainer_002_what_is_stock_market": {
+      "title": "What is the Stock Market? (The Pizza Analogy)",
+      "youtube_id": "NO09JaxCTBg",
+      "status": "SCHEDULED_MIDDAY",
+      "url": "https://youtube.com/shorts/NO09JaxCTBg"
+    },
+    "explainer_003_what_is_a_trade": {
+      "title": "What is a Trade in the Stock Market?",
+      "youtube_id": "br4fUtQ7C4I",
+      "status": "SCHEDULED_EVENING",
+      "url": "https://youtube.com/shorts/br4fUtQ7C4I"
+    },
+    "explainer_004_how_a_trade_is_done": {
+      "title": "How a Trade is Actually Done (Behind the Scenes)",
+      "youtube_id": "Ua12Y6znv00",
+      "status": "SCHEDULED_NEXT_DAY",
+      "url": "https://youtube.com/shorts/Ua12Y6znv00"
     }
   },
   "weekly_history": []

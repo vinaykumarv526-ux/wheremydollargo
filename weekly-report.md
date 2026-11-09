@@ -3,8 +3,8 @@
 ## 1. System Health & Autonomous Status
 - **Cloud Pipeline**: Online & Active (GitHub Actions)
 - **Channel**: `@WhereMyDollarGo`
-- **Total Content Slots Managed**: 5
-- **Videos Published to YouTube**: 3
+- **Total Content Slots Managed**: 9
+- **Videos Published to YouTube**: 7
 - **Ready in Publish Queue**: 2
 
 ## 2. Recent Production Slots & Visual Styles
@@ -15,6 +15,10 @@
 | short_001_ | Where Does  of Your Paycheck Actually Go? | None | ✅ Live on YouTube |
 | short_002_ | Where Does  of Gas Money Actually Go? | None | ✅ Live on YouTube |
 | short_003_ | Deductible vs Out-of-Pocket Max in 40 Seconds | None | ✅ Live on YouTube |
+| explainer_ | What is a Tax? (Explained in 40 Seconds) | None | ✅ Live on YouTube |
+| explainer_ | What is the Stock Market? (The Pizza Analogy) | None | ✅ Live on YouTube |
+| explainer_ | What is a Trade in the Stock Market? | None | ✅ Live on YouTube |
+| explainer_ | How a Trade is Actually Done (Behind the Scenes) | None | ✅ Live on YouTube |
 
 ## 3. Next Week's Upcoming Queue
 The autonomous pipeline has pre-loaded upcoming finance topics in `topics.json`.
