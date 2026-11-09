@@ -1,0 +1,18 @@
+{
+  "channel_handle": "@WhereMyDollarGo",
+  "initialized_at": "2026-11-10T01:40:00Z",
+  "next_topic_index": 1,
+  "last_run_utc": null,
+  "total_generated": 1,
+  "scheduled_slots": {
+    "2026-11-10_slot1": {
+      "topic_id": "short_001_paycheck",
+      "title": "Where Does $100 of Your Paycheck Actually Go?",
+      "style": "Isometric Infographic",
+      "publish_at": "2026-11-10T16:00:00Z",
+      "status": "QUEUED_LOCAL",
+      "youtube_id": null
+    }
+  },
+  "weekly_history": []
+}

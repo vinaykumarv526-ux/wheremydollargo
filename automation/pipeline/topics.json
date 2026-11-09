@@ -1,0 +1,153 @@
+{
+  "channel": "@WhereMyDollarGo",
+  "tagline": "Every dollar, explained.",
+  "topics": [
+    {
+      "id": "short_001_paycheck",
+      "title": "Where Does $100 of Your Paycheck Actually Go?",
+      "hook": "You just earned $100. But before it touches your bank account, where did $24 instantly vanish?",
+      "style": "Isometric Infographic",
+      "breakdown": {
+        "gross": "$100.00",
+        "social_security": "$6.20",
+        "medicare": "$1.45",
+        "federal_income_tax": "$10.50",
+        "state_tax": "$4.50",
+        "net_pay": "$77.35"
+      },
+      "takeaway": "Mandatory FICA is distinct from progressive income tax.",
+      "disclaimer": "General education, not financial, tax, legal or insurance advice.",
+      "tags": ["paycheck", "taxes", "fica", "wheremydollargo", "personalfinance", "shorts"]
+    },
+    {
+      "id": "short_002_gas_money",
+      "title": "Where Does $100 of Gas Money Actually Go?",
+      "hook": "You just pumped $100 into your tank. How much did the gas station actually pocket?",
+      "style": "Data Storytelling",
+      "breakdown": {
+        "crude_oil": "$52.00",
+        "refining_costs": "$19.00",
+        "federal_state_taxes": "$15.00",
+        "distribution_station_margin": "$14.00",
+        "station_actual_profit": "< $2.00"
+      },
+      "takeaway": "Gas stations make their profit selling snacks and drinks, not on the fuel pump.",
+      "disclaimer": "General education, not financial advice.",
+      "tags": ["gasprices", "economy", "moneybreakdown", "wheremydollargo", "shorts"]
+    },
+    {
+      "id": "short_003_deductible_vs_max",
+      "title": "Deductible vs Out-of-Pocket Max in 40 Seconds",
+      "hook": "Most people think hitting their deductible means 100% free medical care. That misunderstanding costs thousands.",
+      "style": "Swiss Motion Graphics",
+      "breakdown": {
+        "stage_1": "Deductible: You pay 100% until you reach this threshold.",
+        "stage_2": "Coinsurance: Insurer splits bill (e.g. 80/20) up to the max.",
+        "stage_3": "Out-of-Pocket Max: Insurer finally covers 100% of covered in-network claims."
+      },
+      "takeaway": "Your deductible is the starting line for coverage; your out-of-pocket maximum is the actual finish line.",
+      "disclaimer": "General education only, not insurance advice.",
+      "tags": ["insurance", "healthcare", "deductible", "moneytips", "wheremydollargo"]
+    },
+    {
+      "id": "short_004_health_premium_mlr",
+      "title": "Where Does Your Health Insurance Premium Go?",
+      "hook": "Federal law legally forces health insurance companies to spend 80 to 85 cents of every dollar you pay on one thing.",
+      "style": "Pictogram Motion",
+      "breakdown": {
+        "clinical_care_quality": "80% to 85%",
+        "admin_marketing_profit": "15% to 20%",
+        "aca_80_20_rule": "Medical Loss Ratio threshold triggers refund checks if violated."
+      },
+      "takeaway": "If an insurer spends less than 80% on actual patient care, they must mail you a rebate check.",
+      "disclaimer": "General education only, not insurance advice.",
+      "tags": ["insurancepremium", "healthcare", "mlr", "wheremydollargo", "shorts"]
+    },
+    {
+      "id": "short_005_car_insurance_spike",
+      "title": "Why Car Insurance Rates Spike (Even With Zero Tickets)",
+      "hook": "Zero accidents, zero speeding tickets, pristine record—yet your auto renewal jumped 18%. Why?",
+      "style": "Chalkboard Explainer",
+      "breakdown": {
+        "sensor_bumpers": "+34% average bumper replacement cost due to radar and cameras",
+        "repair_labor_inflation": "+28% body shop technician labor rates",
+        "weather_loss_events": "Hail and flood claims spread across entire zip code rating pools"
+      },
+      "takeaway": "Insurance is a collective pool: you pay for the replacement tech and claim frequency of everyone around you.",
+      "disclaimer": "General education, not insurance advice.",
+      "tags": ["carinsurance", "rates", "auto", "personalfinance", "wheremydollargo"]
+    },
+    {
+      "id": "short_006_mortgage_amortization",
+      "title": "The Mortgage Amortization Curve: Month 1 vs Year 15",
+      "hook": "On your very first $2,000 monthly mortgage payment, how much of your home do you actually own?",
+      "style": "Data Physicalization",
+      "breakdown": {
+        "first_payment_interest": "~$1,700 to bank interest",
+        "first_payment_principal": "~$300 to house equity",
+        "year_15_shift": "Payment gradually flips to majority principal reduction"
+      },
+      "takeaway": "In the early years, you are essentially renting cash from the bank. One extra annual payment cuts years off the loan.",
+      "disclaimer": "General education, not mortgage or financial advice.",
+      "tags": ["mortgage", "housing", "interest", "homeownership", "wheremydollargo"]
+    },
+    {
+      "id": "short_007_credit_score_math",
+      "title": "What Actually Determines Your Credit Score?",
+      "hook": "Closing an old credit card can drop your credit score 30 points overnight. Here is the mathematical reason why.",
+      "style": "Whiteboard Explainer",
+      "breakdown": {
+        "payment_history": "35% (Never miss a due date)",
+        "amounts_owed_utilization": "30% (Keep below 10-30% of total limit)",
+        "length_of_credit_history": "15% (Oldest account age matters)",
+        "credit_mix": "10% (Revolving vs installment loans)",
+        "new_credit_inquiries": "10% (Hard inquiries)"
+      },
+      "takeaway": "Closing old cards cuts your total credit limit and shortens your average history.",
+      "disclaimer": "General education, not credit repair advice.",
+      "tags": ["creditscore", "fico", "creditcard", "finance", "wheremydollargo"]
+    },
+    {
+      "id": "short_008_apr_vs_apy",
+      "title": "APR vs APY: The Hidden Difference Banks Use",
+      "hook": "Notice how banks quote APR when you borrow, but APY when you save? There's a calculated mathematical reason.",
+      "style": "Dark Tech Keynote",
+      "breakdown": {
+        "apr": "Annual Percentage Rate (simple interest, excludes compounding)",
+        "apy": "Annual Percentage Yield (reflects frequency of compounding interest)",
+        "impact": "A 5% APY pays more than a 5% APR over 12 months."
+      },
+      "takeaway": "When borrowing: lower APR is better. When saving: higher APY with daily compounding is better.",
+      "disclaimer": "General education only.",
+      "tags": ["banking", "apr", "apy", "interestrates", "wheremydollargo"]
+    },
+    {
+      "id": "short_009_inflation_cost",
+      "title": "What 3% Inflation Does to $10,000 Over 10 Years",
+      "hook": "Leaving $10,000 cash in a 0.01% checking account feels safe. Mathematically, it is a guaranteed loss.",
+      "style": "Isometric Infographic",
+      "breakdown": {
+        "nominal_value": "$10,000 remains $10,000 on paper",
+        "purchasing_power_loss": "Drops to ~$7,374 in real goods and services",
+        "annual_hidden_tax": "~$260 to $300 in lost purchasing power each year"
+      },
+      "takeaway": "Inflation is the invisible friction fee on cash. High-yield savings or diversified assets protect purchasing power.",
+      "disclaimer": "General education, not investment advice.",
+      "tags": ["inflation", "purchasingpower", "savings", "wheremydollargo"]
+    },
+    {
+      "id": "short_010_fdic_coverage",
+      "title": "Where Is Your Money Really Safe? (FDIC Explained)",
+      "hook": "If your bank collapses on Friday afternoon, is your cash gone on Monday morning?",
+      "style": "Visual Investigation",
+      "breakdown": {
+        "coverage_limit": "$250,000 per depositor, per insured bank, per ownership category",
+        "joint_accounts": "Co-owned accounts protected up to $500,000",
+        "fintech_caution": "Neobanks use partner banks; check if funds are held in sweep accounts."
+      },
+      "takeaway": "Always confirm the FDIC member bank logo; cash in insured banks is backed by the full faith and credit of the US government.",
+      "disclaimer": "General education only.",
+      "tags": ["fdic", "banking", "safety", "money", "wheremydollargo"]
+    }
+  ]
+}

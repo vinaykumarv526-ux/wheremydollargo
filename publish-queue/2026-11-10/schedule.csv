@@ -1,0 +1,4 @@
+Item_ID,Type,Title,Publish_Time_ET,Publish_Time_IST,Visual_Style,Status,Approved
+short-01,Short,Where Does $100 of Your Paycheck Go?,12:00 ET (2026-11-10),22:30 IST (2026-11-10),Isometric Infographic,needs-review,No
+carousel-01,Carousel,Last 24 Hours in Money (5 Slides),07:00 ET (2026-11-10),17:30 IST (2026-11-10),Clean Modern Minimal,needs-review,No
+short-02,Short,Where Does $100 of Gas Money Go?,18:00 ET (2026-11-10),04:30 IST (2026-11-11),Data Storytelling,in-prep,No
