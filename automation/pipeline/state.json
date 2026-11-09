@@ -3,7 +3,7 @@
   "initialized_at": "2026-11-10T01:40:00Z",
   "next_topic_index": 2,
   "last_run_utc": "2026-11-09T20:24:04.743691+00:00",
-  "total_generated": 1,
+  "total_generated": 3,
   "scheduled_slots": {
     "2026-11-10_slot1": {
       "topic_id": "short_001_paycheck",
@@ -21,6 +21,24 @@
       "youtube_id": null,
       "status": "STAGED",
       "scheduled_at": "2026-11-09T20:24:04.743679+00:00"
+    },
+    "short_001_paycheck": {
+      "title": "Where Does  of Your Paycheck Actually Go?",
+      "youtube_id": "CQCVUjs0W30",
+      "status": "PUBLISHED",
+      "url": "https://youtube.com/shorts/CQCVUjs0W30"
+    },
+    "short_002_gas_money": {
+      "title": "Where Does  of Gas Money Actually Go?",
+      "youtube_id": "o0mN7gr7nYY",
+      "status": "SCHEDULED_MIDDAY",
+      "url": "https://youtube.com/shorts/o0mN7gr7nYY"
+    },
+    "short_003_deductible_vs_max": {
+      "title": "Deductible vs Out-of-Pocket Max in 40 Seconds",
+      "youtube_id": "gtXrnTQA1uA",
+      "status": "SCHEDULED_EVENING",
+      "url": "https://youtube.com/shorts/gtXrnTQA1uA"
     }
   },
   "weekly_history": []
