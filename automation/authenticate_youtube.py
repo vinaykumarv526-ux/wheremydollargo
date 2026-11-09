@@ -15,6 +15,7 @@ CLIENT_SECRET_FILE = ROOT / "client_secret.json"
 TOKEN_FILE = ROOT / "youtube_token.json"
 
 SCOPES = [
+    "https://www.googleapis.com/auth/youtube",
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.readonly"
 ]
