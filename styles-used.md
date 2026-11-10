@@ -11,3 +11,4 @@ Rule: **Never reuse a visual style within the last 20 videos.**
 | #005 | 2026-11-12 | Why Car Insurance Rates Rise With Zero Claims | Chalkboard Explainer | 9:16 (Short, 45s) | Scheduled |
 | Auto | 2026-11-09 | Where Does $100 of Gas Money Actually Go? | Data Storytelling | 9:16 (Short) | Staged Peak |
 | Auto | 2026-11-10 | What is a Trade in the Stock Market? | Animated Explainer | 9:16 (Short) | Staged Peak |
+| Auto | 2026-11-11 | What is a Trade in the Stock Market? | Stickman Explainer | 9:16 (Short) | Staged Peak |
