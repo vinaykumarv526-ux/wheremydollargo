@@ -178,15 +178,22 @@ def maintain_schedule_buffer(max_to_process=1):
         if not rendered_mp4.exists() and "scenes" in topic:
             try:
                 import sys
+                import shutil
                 sys.path.append(str(ROOT / "automation"))
-                from video_engine import render_short_video
-                print(f"Autonomously rendering video for {topic['id']}...")
-                render_short_video(
-                    topic_id=f"{slot['id']}_{topic['id']}",
-                    script_text=topic.get("script", topic.get("hook", "")),
-                    scenes_spec=topic["scenes"],
-                    output_mp4=rendered_mp4
-                )
+                if topic.get("id") == "explainer_000_how_money_works_stickman" or topic.get("style") == "Stickman Explainer":
+                    from stickman_engine import produce_stickman_explainer_video
+                    print(f"Autonomously rendering Stickonomics explainer video for {topic['id']}...")
+                    stickman_out, _ = produce_stickman_explainer_video()
+                    shutil.copy(str(stickman_out), str(rendered_mp4))
+                else:
+                    from video_engine import render_short_video
+                    print(f"Autonomously rendering video for {topic['id']}...")
+                    render_short_video(
+                        topic_id=f"{slot['id']}_{topic['id']}",
+                        script_text=topic.get("script", topic.get("hook", "")),
+                        scenes_spec=topic["scenes"],
+                        output_mp4=rendered_mp4
+                    )
             except Exception as e:
                 print(f"Autonomous video render notice: {e}")
 
