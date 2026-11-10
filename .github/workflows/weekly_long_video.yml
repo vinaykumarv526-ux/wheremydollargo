@@ -1,0 +1,51 @@
+name: WhereMyDollarGo Saturday Long Deep-Dive Video
+
+on:
+  schedule:
+    # Runs every Saturday at 13:00 UTC (9:00 AM ET) to build and schedule the 10:30 AM ET Deep Dive
+    - cron: '0 13 * * 6'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  build-and-schedule-long-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install FFmpeg & Fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-liberation fonts-dejavu
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests edge-tts pillow google-auth-oauthlib google-api-python-client
+
+      - name: Render & Schedule Saturday Deep Dive
+        env:
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export PYTHONPATH="automation:automation/pipeline:$PYTHONPATH"
+          python automation/pipeline/weekly_long_video.py
+
+      - name: Commit State & Releases
+        run: |
+          git config user.name "WhereMyDollarGo Bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add automation/pipeline/state.json weekly-report.md styles-used.md
+          git commit -m "chore: schedule Saturday long deep-dive video [skip ci]" || echo "No changes to commit"
+          git push origin main

@@ -1,13 +1,134 @@
 """
 Daily Carousel Generator for WhereMyDollarGo: "Last 24 Hours in US Money"
-Generates 5-slide visual carousel files ready for Instagram, LinkedIn, and YouTube Community.
+Generates 5-slide visual carousel (1080x1350 PNG images) ready for YouTube Community,
+Instagram, and LinkedIn.
 """
 import os
+import sys
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent.parent
+FONT_PATH = "C:/Windows/Fonts/arialbd.ttf"
+if not os.path.exists(FONT_PATH):
+    FONT_PATH = "C:/Windows/Fonts/calibrib.ttf"
+
+def get_font(size):
+    try:
+        return ImageFont.truetype(FONT_PATH, size)
+    except Exception:
+        return ImageFont.load_default()
+
+def render_slide_image(slide_info, output_path):
+    w, h = 1080, 1350
+    # Deep midnight navy background
+    im = Image.new("RGB", (w, h), color=(11, 15, 25))
+    draw = ImageDraw.Draw(im)
+
+    # Ambient radial glow top-right
+    for r in range(160, 0, -12):
+        draw.ellipse([(w - r*3, -r*2), (w + r*2, r*2)], fill=(16, 185, 129))
+
+    # Top brand header
+    draw.text((80, 70), "WHERE MY DOLLAR GO", fill=(16, 185, 129), font=get_font(28))
+    draw.text((w - 80, 70), "@WhereMyDollarGo", fill=(148, 163, 184), font=get_font(24), anchor="ra")
+    draw.line([(80, 115), (w - 80, 115)], fill=(30, 41, 59), width=3)
+
+    stype = slide_info["type"]
+    if stype == "COVER":
+        # Cover slide
+        draw.text((80, 220), slide_info["eyebrow"], fill=(16, 185, 129), font=get_font(24))
+        # Title
+        draw.text((80, 290), "Last 24 Hours", fill=(255, 255, 255), font=get_font(76))
+        draw.text((80, 390), "in US Money", fill=(56, 189, 248), font=get_font(76))
+        draw.text((80, 520), slide_info["date"], fill=(245, 158, 11), font=get_font(38))
+
+        # Big summary card
+        draw.rounded_rectangle([(80, 620), (w - 80, 1120)], radius=28, fill=(15, 23, 42), outline=(51, 65, 85), width=3)
+        draw.text((130, 690), "TODAY'S 3 KEY ECONOMIC SHIFTS:", fill=(16, 185, 129), font=get_font(28))
+        draw.text((130, 770), "1. Mortgage Rates & Housing Costs", fill=(248, 250, 252), font=get_font(34))
+        draw.text((130, 850), "2. Top High-Yield Savings Account Rates", fill=(248, 250, 252), font=get_font(34))
+        draw.text((130, 930), "3. National Fuel Pump & Energy Prices", fill=(248, 250, 252), font=get_font(34))
+        draw.text((130, 1030), "Swipe to see what it means for your wallet ➡️", fill=(148, 163, 184), font=get_font(28))
+
+    elif stype == "METRIC":
+        draw.text((80, 180), slide_info["category"], fill=(16, 185, 129), font=get_font(24))
+        
+        # Headline
+        words = slide_info["headline"].split()
+        lines = []
+        cur = []
+        for wd in words:
+            cur.append(wd)
+            if len(" ".join(cur)) > 26:
+                lines.append(" ".join(cur))
+                cur = []
+        if cur:
+            lines.append(" ".join(cur))
+        
+        hy = 230
+        for l in lines:
+            draw.text((80, hy), l, fill=(255, 255, 255), font=get_font(44))
+            hy += 56
+
+        # Metric Hero Box
+        box_top = hy + 40
+        box_bot = box_top + 280
+        draw.rounded_rectangle([(80, box_top), (w - 80, box_bot)], radius=24, fill=(15, 23, 42), outline=(51, 65, 85), width=3)
+        draw.text((w // 2, box_top + 60), slide_info["metric"], fill=(56, 189, 248), font=get_font(84), anchor="mm")
+        draw.text((w // 2, box_top + 160), slide_info["delta"], fill=(245, 158, 11), font=get_font(30), anchor="mm")
+        draw.text((w // 2, box_top + 220), f"Context: {slide_info['context']}", fill=(148, 163, 184), font=get_font(24), anchor="mm")
+
+        # Impact Card
+        imp_top = box_bot + 40
+        imp_bot = 1180
+        draw.rounded_rectangle([(80, imp_top), (w - 80, imp_bot)], radius=24, fill=(15, 23, 42), outline=(30, 41, 59), width=2)
+        draw.text((120, imp_top + 40), "WHAT IT MEANS FOR EVERYDAY PEOPLE:", fill=(245, 158, 11), font=get_font(24))
+        
+        # Wrap impact text
+        imp_words = slide_info["impact"].split()
+        imp_lines = []
+        cur = []
+        for wd in imp_words:
+            cur.append(wd)
+            if len(" ".join(cur)) > 34:
+                imp_lines.append(" ".join(cur))
+                cur = []
+        if cur:
+            imp_lines.append(" ".join(cur))
+        
+        iy = imp_top + 95
+        for l in imp_lines:
+            draw.text((120, iy), l, fill=(226, 232, 240), font=get_font(30))
+            iy += 48
+            
+        draw.text((120, imp_bot - 50), f"Primary Source: {slide_info['source']}", fill=(100, 116, 139), font=get_font(22))
+
+    elif stype == "CONCLUSION":
+        draw.text((80, 180), "DAILY SUMMARY & TAKEAWAY", fill=(16, 185, 129), font=get_font(24))
+        draw.text((80, 240), "Follow Your Dollar Daily", fill=(255, 255, 255), font=get_font(60))
+
+        # Takeaway quote card
+        draw.rounded_rectangle([(80, 360), (w - 80, 680)], radius=24, fill=(15, 23, 42), outline=(16, 185, 129), width=3)
+        draw.text((130, 420), "CORE TAKEAWAY:", fill=(16, 185, 129), font=get_font(26))
+        draw.text((130, 480), f'"{slide_info["takeaway"]}"', fill=(248, 250, 252), font=get_font(34))
+
+        # Community question card
+        draw.rounded_rectangle([(80, 720), (w - 80, 1020)], radius=24, fill=(15, 23, 42), outline=(51, 65, 85), width=2)
+        draw.text((130, 780), "COMMUNITY QUESTION:", fill=(245, 158, 11), font=get_font(26))
+        draw.text((130, 840), slide_info["question"], fill=(248, 250, 252), font=get_font(32))
+        draw.text((130, 930), "Drop your answer in the comments below! 👇", fill=(148, 163, 184), font=get_font(26))
+
+        draw.text((w // 2, 1100), slide_info["disclaimer"], fill=(100, 116, 139), font=get_font(22), anchor="mm")
+        draw.text((w // 2, 1180), "Subscribe & Follow @WhereMyDollarGo", fill=(255, 255, 255), font=get_font(34), anchor="mm")
+
+    # Bottom footer page numbers
+    page_num = slide_info.get("slide", 1)
+    draw.text((w // 2, 1280), f"Slide {page_num} of 5", fill=(100, 116, 139), font=get_font(22), anchor="mm")
+
+    im.save(output_path, "PNG")
 
 def generate_daily_carousel(date_str=None):
     if not date_str:
@@ -16,7 +137,6 @@ def generate_daily_carousel(date_str=None):
     target_dir = ROOT / "publish-queue" / date_str / "daily-carousel"
     target_dir.mkdir(parents=True, exist_ok=True)
 
-    # 1. Macro economic data snapshot (curated from Fed, Freddie Mac PMMS, EIA benchmarks)
     slides_data = [
         {
             "slide": 1,
@@ -42,7 +162,7 @@ def generate_daily_carousel(date_str=None):
             "slide": 3,
             "type": "METRIC",
             "category": "BANKING & CASH SAVINGS",
-            "headline": "Top High-Yield Savings Accounts (HYSA) Hold at 4.45% APY",
+            "headline": "Top High-Yield Savings Accounts Hold at 4.45% APY",
             "metric": "4.45% APY",
             "delta": "vs 0.07% Big-Box Checking",
             "context": "Competitive digital institutions maintain high yields despite Fed pauses.",
@@ -72,211 +192,35 @@ def generate_daily_carousel(date_str=None):
     ]
 
     # Save JSON spec
-    json_path = target_dir / "carousel_spec.json"
-    with open(json_path, "w", encoding="utf-8") as f:
+    with open(target_dir / "carousel_spec.json", "w", encoding="utf-8") as f:
         json.dump(slides_data, f, indent=2)
 
-    # Generate standalone responsive HTML presentation of the 5 slides
-    html_content = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Last 24 Hours in Money - {date_str}</title>
-  <style>
-    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    body {{
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #0B0F19;
-      color: #F8FAFC;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      padding: 40px 20px;
-    }}
-    .slide {{
-      width: 540px;
-      height: 675px;
-      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-      border: 1px solid #334155;
-      border-radius: 24px;
-      padding: 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
-    }}
-    .slide::before {{
-      content: '';
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-    }}
-    .eyebrow {{
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #10B981;
-      text-transform: uppercase;
-    }}
-    h1 {{
-      font-size: 38px;
-      line-height: 1.15;
-      font-weight: 800;
-      color: #FFFFFF;
-      margin-top: 14px;
-    }}
-    .metric-box {{
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid #334155;
-      border-radius: 16px;
-      padding: 24px;
-      margin: 20px 0;
-    }}
-    .metric-val {{
-      font-size: 46px;
-      font-weight: 800;
-      color: #38BDF8;
-    }}
-    .metric-delta {{
-      font-size: 14px;
-      font-weight: 600;
-      color: #94A3B8;
-      margin-top: 4px;
-    }}
-    .impact-label {{
-      font-size: 12px;
-      font-weight: 700;
-      color: #F59E0B;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }}
-    .impact-text {{
-      font-size: 16px;
-      line-height: 1.45;
-      color: #CBD5E1;
-    }}
-    .footer {{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid #334155;
-      padding-top: 16px;
-      font-size: 12px;
-      color: #64748B;
-    }}
-    .brand {{
-      color: #10B981;
-      font-weight: 700;
-    }}
-  </style>
-</head>
-<body>
-  <!-- Slide 1 -->
-  <div class="slide">
-    <div>
-      <div class="eyebrow">{slides_data[0]['eyebrow']}</div>
-      <h1>{slides_data[0]['headline']}</h1>
-      <p style="margin-top: 16px; color: #94A3B8; font-size: 18px;">{slides_data[0]['subtitle']}</p>
-    </div>
-    <div style="font-size: 20px; color: #38BDF8; font-weight: 600;">{slides_data[0]['date']}</div>
-    <div class="footer">
-      <span>WhereMyDollarGo</span>
-      <span class="brand">{slides_data[0]['brand']}</span>
-    </div>
-  </div>
+    # Render each of the 5 slides to PNG
+    for i, slide in enumerate(slides_data, 1):
+        png_path = target_dir / f"slide_{i}.png"
+        render_slide_image(slide, png_path)
 
-  <!-- Slide 2 -->
-  <div class="slide">
-    <div>
-      <div class="eyebrow">{slides_data[1]['category']}</div>
-      <h2 style="font-size: 26px; margin-top: 10px; color: #FFF;">{slides_data[1]['headline']}</h2>
-      <div class="metric-box">
-        <div class="metric-val">{slides_data[1]['metric']}</div>
-        <div class="metric-delta">{slides_data[1]['delta']}</div>
-      </div>
-      <div>
-        <div class="impact-label">WHAT IT MEANS FOR YOU</div>
-        <div class="impact-text">{slides_data[1]['impact']}</div>
-      </div>
-    </div>
-    <div class="footer">
-      <span>Source: {slides_data[1]['source']}</span>
-      <span class="brand">@WhereMyDollarGo</span>
-    </div>
-  </div>
+    # Write copy-paste community post caption
+    caption_content = f"""📊 Last 24 Hours in US Money ({date_str})
 
-  <!-- Slide 3 -->
-  <div class="slide">
-    <div>
-      <div class="eyebrow">{slides_data[2]['category']}</div>
-      <h2 style="font-size: 26px; margin-top: 10px; color: #FFF;">{slides_data[2]['headline']}</h2>
-      <div class="metric-box">
-        <div class="metric-val">{slides_data[2]['metric']}</div>
-        <div class="metric-delta">{slides_data[2]['delta']}</div>
-      </div>
-      <div>
-        <div class="impact-label">WHAT IT MEANS FOR YOU</div>
-        <div class="impact-text">{slides_data[2]['impact']}</div>
-      </div>
-    </div>
-    <div class="footer">
-      <span>Source: {slides_data[2]['source']}</span>
-      <span class="brand">@WhereMyDollarGo</span>
-    </div>
-  </div>
+1️⃣ Mortgage Rates: 30-year fixed holds at 6.62%.
+2️⃣ Savings Yields: Top HYSAs paying ~4.45% APY vs 0.07% at traditional banks.
+3️⃣ Gas Pump: National average steady at $3.12/gal.
 
-  <!-- Slide 4 -->
-  <div class="slide">
-    <div>
-      <div class="eyebrow">{slides_data[3]['category']}</div>
-      <h2 style="font-size: 26px; margin-top: 10px; color: #FFF;">{slides_data[3]['headline']}</h2>
-      <div class="metric-box">
-        <div class="metric-val">{slides_data[3]['metric']}</div>
-        <div class="metric-delta">{slides_data[3]['delta']}</div>
-      </div>
-      <div>
-        <div class="impact-label">WHAT IT MEANS FOR YOU</div>
-        <div class="impact-text">{slides_data[3]['impact']}</div>
-      </div>
-    </div>
-    <div class="footer">
-      <span>Source: {slides_data[3]['source']}</span>
-      <span class="brand">@WhereMyDollarGo</span>
-    </div>
-  </div>
+Swipe through the slides for the exact breakdown of how this hits your everyday budget. ➡️
 
-  <!-- Slide 5 -->
-  <div class="slide">
-    <div>
-      <div class="eyebrow">DAILY SUMMARY</div>
-      <h2 style="font-size: 30px; margin-top: 10px; color: #FFF;">{slides_data[4]['headline']}</h2>
-      <p style="margin-top: 20px; font-size: 18px; line-height: 1.5; color: #E2E8F0;">"{slides_data[4]['takeaway']}"</p>
-      <div style="margin-top: 30px; padding: 18px; background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10B981; border-radius: 8px;">
-        <div style="font-weight: 700; color: #10B981; margin-bottom: 4px;">COMMUNITY QUESTION</div>
-        <div style="color: #CBD5E1; font-size: 15px;">{slides_data[4]['question']}</div>
-      </div>
-    </div>
-    <div class="footer">
-      <span>{slides_data[4]['disclaimer']}</span>
-      <span class="brand">@WhereMyDollarGo</span>
-    </div>
-  </div>
-</body>
-</html>
+💬 Question: Where is your emergency fund sitting right now: traditional checking or high-yield savings?
+
+Follow @WhereMyDollarGo for daily breakdowns of money, taxes, and debt.
+(General education, not financial advice.)
+
+#personalfinance #mortgagerates #interestrates #hysa #inflation #wheremydollargo #money
 """
-    html_path = target_dir / "carousel.html"
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
+    with open(target_dir / "caption.txt", "w", encoding="utf-8") as f:
+        f.write(caption_content)
 
-    print(f"Generated Daily Carousel package at: {target_dir}")
-    return json_path
+    print(f"[OK] Generated 5 carousel PNG slides and caption at: {target_dir}")
+    return target_dir
 
 if __name__ == "__main__":
     generate_daily_carousel()

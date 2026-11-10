@@ -3,7 +3,7 @@
   "initialized_at": "2026-11-10T01:40:00Z",
   "next_topic_index": 2,
   "last_run_utc": "2026-11-09T20:24:04.743691+00:00",
-  "total_generated": 9,
+  "total_generated": 10,
   "scheduled_slots": {
     "2026-11-10_slot1": {
       "topic_id": "short_001_paycheck",
@@ -63,6 +63,14 @@
       "youtube_id": "Ua12Y6znv00",
       "status": "SCHEDULED_NEXT_DAY",
       "url": "https://youtube.com/shorts/Ua12Y6znv00"
+    },
+    "deep_dive_001_how_money_is_created": {
+      "title": "How Money is Actually Created (The Fractional Reserve System) (Full Deep Dive)",
+      "youtube_id": "GxjuCZRZaIM",
+      "status": "SCHEDULED_SATURDAY",
+      "url": "https://youtu.be/GxjuCZRZaIM",
+      "type": "16:9 Widescreen Deep Dive",
+      "release": "2026-11-14T15:30:00Z"
     }
   },
   "weekly_history": []

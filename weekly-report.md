@@ -1,10 +1,10 @@
-# 📊 WhereMyDollarGo: Weekly Executive Report (2026-11-09)
+# 📊 WhereMyDollarGo: Weekly Executive Report (2026-11-10)
 
 ## 1. System Health & Autonomous Status
 - **Cloud Pipeline**: Online & Active (GitHub Actions)
 - **Channel**: `@WhereMyDollarGo`
-- **Total Content Slots Managed**: 9
-- **Videos Published to YouTube**: 7
+- **Total Content Slots Managed**: 10
+- **Videos Published to YouTube**: 8
 - **Ready in Publish Queue**: 2
 
 ## 2. Recent Production Slots & Visual Styles
@@ -19,6 +19,7 @@
 | explainer_ | What is the Stock Market? (The Pizza Analogy) | None | ✅ Live on YouTube |
 | explainer_ | What is a Trade in the Stock Market? | None | ✅ Live on YouTube |
 | explainer_ | How a Trade is Actually Done (Behind the Scenes) | None | ✅ Live on YouTube |
+| deep_dive_ | How Money is Actually Created (The Fractional Reserve System) (Full Deep Dive) | None | ✅ Live on YouTube |
 
 ## 3. Next Week's Upcoming Queue
 The autonomous pipeline has pre-loaded upcoming finance topics in `topics.json`.
