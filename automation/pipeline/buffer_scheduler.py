@@ -66,19 +66,23 @@ def build_topic_package(topic, slot):
     slot_dir = ROOT / "publish-queue" / date_str / f"{slot['id']}_{topic['id']}"
     slot_dir.mkdir(parents=True, exist_ok=True)
 
+    style_name = topic.get("style", "Animated Explainer")
+    hook_text = topic.get("hook", "")
+    script_text = topic.get("script", hook_text)
+
     # 1. Write verbatim script
     script_content = f"""# Script: {topic['title']}
 
 **Slot**: {slot['id']}
 **Scheduled Peak Time**: {slot['iso']} (US Peak Hours)
-**Style**: {topic['style']}  
+**Style**: {style_name}  
 **Channel**: @WhereMyDollarGo  
 
 ### Spoken Narration
-"{topic['hook']}"
+"{script_text}"
 
 ### Data Breakdown:
-{json.dumps(topic.get('breakdown', {}), indent=2)}
+{json.dumps(topic.get('breakdown', topic.get('scenes', {})), indent=2)}
 
 ### Key Takeaway:
 "{topic.get('takeaway', '')}"
@@ -92,7 +96,7 @@ def build_topic_package(topic, slot):
     # 2. Write metadata & description
     desc_content = f"""{topic['title']}
 
-{topic['hook']}
+{script_text}
 
 Key Takeaways:
 {topic.get('takeaway', '')}
@@ -161,18 +165,36 @@ def maintain_schedule_buffer(max_to_process=1):
         topic = topics[next_idx % len(topics)]
         next_idx += 1
 
+        style_name = topic.get("style", "Animated Explainer")
         print(f"\n--- Staging Peak Slot: {slot['id']} ({slot['iso']}) ---")
-        print(f"Topic: {topic['title']} [{topic['style']}]")
+        print(f"Topic: {topic['title']} [{style_name}]")
 
         pkg_dir = build_topic_package(topic, slot)
 
         rendered_mp4 = pkg_dir / "video.mp4"
         yt_id = None
+
+        # Autonomously render video if scenes and script exist
+        if not rendered_mp4.exists() and "scenes" in topic:
+            try:
+                import sys
+                sys.path.append(str(ROOT / "automation"))
+                from video_engine import render_short_video
+                print(f"Autonomously rendering video for {topic['id']}...")
+                render_short_video(
+                    topic_id=f"{slot['id']}_{topic['id']}",
+                    script_text=topic.get("script", topic.get("hook", "")),
+                    scenes_spec=topic["scenes"],
+                    output_mp4=rendered_mp4
+                )
+            except Exception as e:
+                print(f"Autonomous video render notice: {e}")
+
         if rendered_mp4.exists():
             yt_id = upload_to_youtube(
                 str(rendered_mp4),
                 topic["title"],
-                topic["hook"],
+                topic.get("script", topic.get("hook", "")),
                 topic.get("tags", []),
                 publish_at_iso=slot["iso"]
             )
@@ -180,7 +202,7 @@ def maintain_schedule_buffer(max_to_process=1):
         scheduled_slots[slot["id"]] = {
             "topic_id": topic["id"],
             "title": topic["title"],
-            "style": topic["style"],
+            "style": style_name,
             "publish_at": slot["iso"],
             "youtube_id": yt_id,
             "status": "PUBLISHED" if yt_id else "STAGED",
@@ -198,7 +220,7 @@ def maintain_schedule_buffer(max_to_process=1):
         # Log into styles-used.md
         styles_file = ROOT / "styles-used.md"
         with open(styles_file, "a", encoding="utf-8") as f:
-            f.write(f"| Auto | {slot['date']} | {topic['title']} | {topic['style']} | 9:16 (Short) | Staged Peak |\n")
+            f.write(f"| Auto | {slot['date']} | {topic['title']} | {style_name} | 9:16 (Short) | Staged Peak |\n")
 
     print("\nBuffer maintenance complete. State updated with US peak timings.")
 

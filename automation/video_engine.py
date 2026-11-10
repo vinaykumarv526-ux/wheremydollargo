@@ -25,19 +25,30 @@ GOLD_ACCENT = (245, 158, 11)
 TEXT_WHITE = (248, 250, 252)
 TEXT_MUTED = (148, 163, 184)
 
-FONT_PATH = "C:/Windows/Fonts/arialbd.ttf"
-if not os.path.exists(FONT_PATH):
-    FONT_PATH = "C:/Windows/Fonts/calibrib.ttf"
-
 def get_font(size):
+    font_candidates = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",
+        "C:/Windows/Fonts/arialbd.ttf",
+        "C:/Windows/Fonts/calibrib.ttf",
+        "arialbd.ttf",
+        "DejaVuSans-Bold.ttf",
+    ]
+    for p in font_candidates:
+        if os.path.exists(p):
+            try:
+                return ImageFont.truetype(p, size)
+            except Exception:
+                pass
     try:
-        return ImageFont.truetype(FONT_PATH, size)
-    except Exception:
         return ImageFont.load_default()
+    except Exception:
+        return None
 
-async def synthesize_voice(text, output_audio_path, voice="en-US-ChristopherNeural"):
+async def synthesize_voice(text, output_audio_path, voice="en-US-GuyNeural"):
     import edge_tts
-    comm = edge_tts.Communicate(text, voice, rate="+6%")
+    comm = edge_tts.Communicate(text, voice, rate="+0%", pitch="-2Hz")
     await comm.save(str(output_audio_path))
     print(f"[VOICE] Synthesized audio to {output_audio_path}")
 
