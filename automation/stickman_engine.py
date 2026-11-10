@@ -611,42 +611,166 @@ def render_scene_4_inflation(out_path, caption="Over time, rising inflation make
     draw_karaoke_captions(draw, w, y=1620, words_list=words, active_word_idx=y_idx)
     im.save(out_path, "PNG")
 
-def render_scene_5_investing(out_path, caption="Beat inflation by investing your dollars wisely.", yword="investing"):
+def render_generic_stickman_scene(scene_spec, out_path, caption, yword, scene_idx, total_scenes):
+    """
+    Renders any scene specification from topics.json into the Stickonomics visual style:
+    - Pure white clean canvas (1080x1920)
+    - Top branding header & progress indicator
+    - Expressive stickman with appropriate pose and facial emotion
+    - Illustrated card with key details and metric badge
+    - Financial props (coin stacks, dollar notes, arrows)
+    - Kinetic karaoke caption with radiant yellow word highlight
+    """
     w, h = 1080, 1920
     im = Image.new("RGB", (w, h), color=(255, 255, 255))
     draw = ImageDraw.Draw(im)
-    draw_top_hud(draw, w, "The Wealth Formula: Invest to Win")
 
-    # Celebrating Stickman
-    draw_stickman(draw, 340, 1380, pose="celebrating", emotion="happy", scale=1.15)
+    # Top brand bar
+    draw_top_hud(draw, w, scene_spec.get("subtitle", "Financial Literacy Explainer"))
 
-    # Green Rising Stock / Growth Chart
-    chart_pts = [
-        (480, 1140),
-        (580, 1020),
-        (660, 1070),
-        (780, 840),
-        (900, 680)
-    ]
-    draw_inflation_arrow(draw, chart_pts, color=(16, 185, 129))
+    # Scene Title Card
+    title_text = scene_spec.get("title", "")
+    draw.rounded_rectangle([(120, 200), (960, 310)], radius=24, fill=(248, 250, 252), outline=(203, 213, 225), width=3)
+    draw.text((w // 2, 255), title_text.upper(), fill=(15, 23, 42), font=get_font(36, bold=True), anchor="mm")
 
-    # Compound Growth Tag
-    draw.rounded_rectangle([(660, 600), (940, 690)], radius=18, fill=(220, 252, 231), outline=(16, 185, 129), width=4)
-    draw.text((800, 645), "+45% GAIN", fill=(5, 150, 105), font=get_font(34), anchor="mm")
+    # Pick character emotion and pose based on scene index / content
+    if scene_idx == 0:
+        pose = "pointing_right"
+        emotion = "surprised"
+    elif scene_idx == total_scenes - 1:
+        pose = "celebrating"
+        emotion = "happy"
+    elif "problem" in title_text.lower() or "cost" in title_text.lower() or "inflation" in title_text.lower():
+        pose = "confused"
+        emotion = "surprised"
+    elif "trade" in title_text.lower() or "market" in title_text.lower() or "money" in title_text.lower():
+        pose = "holding_money"
+        emotion = "happy"
+    else:
+        pose = "open_explaining"
+        emotion = "explaining"
 
-    # Stacks of wealth on floor
-    draw_coin_stack(draw, 640, 1380, num_coins=9, scale=1.1)
-    draw_coin_stack(draw, 750, 1380, num_coins=12, scale=1.1)
-    draw_coin_stack(draw, 860, 1380, num_coins=15, scale=1.1)
+    # Draw stickman character on left side
+    char_x = 320
+    char_y = 1380
+    draw_stickman(draw, char_x, char_y, pose=pose, emotion=emotion, scale=1.05)
 
-    # Subscribe badge
-    draw.rounded_rectangle([(180, 240), (900, 340)], radius=24, fill=(15, 23, 42), outline=(16, 185, 129), width=3)
-    draw.text((w // 2, 290), "Subscribe to @WhereMyDollarGo", fill=(255, 255, 255), font=get_font(34), anchor="mm")
+    # Draw Detail Box on right side
+    box_left = 490
+    box_top = 400
+    box_right = 1000
+    box_bottom = 1200
+    draw.rounded_rectangle([(box_left, box_top), (box_right, box_bottom)], radius=24, fill=(241, 245, 249), outline=(203, 213, 225), width=3)
 
+    # Metric Header inside card
+    metric_lbl = scene_spec.get("metric_label", "KEY TAKEAWAY").upper()
+    metric_v = scene_spec.get("metric_val", "100%").upper()
+    draw.rounded_rectangle([(box_left + 30, box_top + 30), (box_right - 30, box_top + 150)], radius=16, fill=(255, 255, 255), outline=(16, 185, 129), width=3)
+    draw.text((box_left + 50, box_top + 50), metric_lbl, fill=(100, 116, 139), font=get_font(22, bold=True))
+    draw.text((box_left + 50, box_top + 90), metric_v, fill=(5, 150, 105), font=get_font(34, bold=True))
+
+    # Detail bullet lines
+    details = scene_spec.get("details", [])
+    cur_y = box_top + 190
+    for det in details:
+        # Wrap detail text
+        words = det.split()
+        lines = []
+        cur_l = []
+        for wd in words:
+            if len(" ".join(cur_l + [wd])) > 24:
+                lines.append(" ".join(cur_l))
+                cur_l = [wd]
+            else:
+                cur_l.append(wd)
+        if cur_l:
+            lines.append(" ".join(cur_l))
+
+        # Clean Emerald Bullet Dot
+        draw.ellipse([(box_left + 32, cur_y + 6), (box_left + 46, cur_y + 20)], fill=(16, 185, 129))
+        for line_str in lines:
+            draw.text((box_left + 65, cur_y), line_str, fill=(30, 41, 59), font=get_font(26, bold=False))
+            cur_y += 38
+        cur_y += 18
+
+    # Props below stickman
+    if scene_idx == total_scenes - 1:
+        # Final celebratory scene: rising green arrow & big coin stack
+        draw_coin_stack(draw, 320, 1420, num_coins=9, scale=1.1)
+        draw_coin_stack(draw, 420, 1420, num_coins=14, scale=1.1)
+    else:
+        # Floor coin stacks
+        draw_coin_stack(draw, char_x - 120, char_y + 10, num_coins=4, scale=0.95)
+        draw_coin_stack(draw, char_x + 120, char_y + 10, num_coins=6, scale=0.95)
+
+    # Captions at bottom
     words = caption.split()
     y_idx = next((i for i, wd in enumerate(words) if yword.lower() in wd.lower()), 0)
     draw_karaoke_captions(draw, w, y=1620, words_list=words, active_word_idx=y_idx)
+
     im.save(out_path, "PNG")
+
+def render_stickman_video(topic, output_mp4):
+    """
+    Renders an end-to-end Stickonomics video for any topic object:
+    - Generates human speech (en-US-AndrewNeural)
+    - Masters audio with ducked background music
+    - Renders all scene cards with stickman & props
+    - Encodes 1080x1920 MP4 at 30fps
+    """
+    work_dir = OUTPUT_DIR / topic["id"]
+    work_dir.mkdir(parents=True, exist_ok=True)
+    raw_voice = work_dir / "voice_raw.mp3"
+    mastered_audio = work_dir / "audio_mastered.wav"
+
+    script = topic.get("script", topic.get("hook", ""))
+    scenes = topic.get("scenes", [])
+
+    print(f"--- Synthesizing Stickonomics Voice for {topic['id']} ---")
+    asyncio.run(synthesize_voice(script, voice="en-US-AndrewNeural", out_path=raw_voice))
+    duration = get_audio_duration(raw_voice)
+    master_audio(raw_voice, mastered_audio)
+
+    scene_dur = duration / max(1, len(scenes))
+    concat_lines = []
+
+    for i, spec in enumerate(scenes):
+        img_path = work_dir / f"scene_{i}.png"
+        details = spec.get("details", [""])
+        caption_line = details[0] if details else spec.get("title", "")
+        # Highlight first key word
+        first_word = caption_line.split()[0] if caption_line.split() else "dollar"
+        
+        # Use specialized scene if it's the custom how_money_works, else use generic stickman scene
+        if topic.get("id") == "explainer_000_how_money_works_stickman":
+            special_scenes = [render_scene_1_barter, render_scene_2_invention, render_scene_3_trust, render_scene_4_inflation, render_scene_5_investing]
+            special_scenes[min(i, len(special_scenes)-1)](img_path, caption_line, first_word)
+        else:
+            render_generic_stickman_scene(spec, img_path, caption_line, first_word, i, len(scenes))
+
+        concat_lines.append(f"file '{img_path.resolve().as_posix()}'")
+        concat_lines.append(f"duration {scene_dur:.3f}")
+
+    # Append last frame for concat demuxer
+    concat_lines.append(f"file '{(work_dir / f'scene_{len(scenes)-1}.png').resolve().as_posix()}'")
+    concat_file = work_dir / "concat.txt"
+    with open(concat_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(concat_lines))
+
+    print(f"Encoding final MP4 to {output_mp4}...")
+    cmd = [
+        "ffmpeg", "-y",
+        "-f", "concat", "-safe", "0", "-i", str(concat_file),
+        "-i", str(mastered_audio),
+        "-vf", "fps=30,format=yuv420p",
+        "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+        "-c:a", "aac", "-b:a", "192k",
+        "-shortest",
+        str(output_mp4)
+    ]
+    subprocess.run(cmd, check=True)
+    print(f"[SUCCESS] Stickman Explainer Video Built: {output_mp4}")
+    return output_mp4
 
 # ==============================================================================
 # AUDIO & MASTERING
