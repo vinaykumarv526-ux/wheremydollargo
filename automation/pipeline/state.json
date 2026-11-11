@@ -1,8 +1,8 @@
 {
   "channel_handle": "@WhereMyDollarGo",
   "initialized_at": "2026-11-10T01:40:00Z",
-  "next_topic_index": 4,
-  "last_run_utc": "2026-11-10T19:47:55.384944+00:00",
+  "next_topic_index": 5,
+  "last_run_utc": "2026-11-11T01:08:48.917659+00:00",
   "total_generated": 10,
   "scheduled_slots": {
     "2026-11-10_slot1": {
@@ -89,6 +89,15 @@
       "youtube_id": null,
       "status": "STAGED",
       "scheduled_at": "2026-11-10T19:47:55.384907+00:00"
+    },
+    "2026-11-11_slot2_Evening_Prime_Peak_1830ET": {
+      "topic_id": "explainer_004_how_a_trade_is_done",
+      "title": "How a Trade is Actually Done (Behind the Scenes)",
+      "style": "Stickman Explainer",
+      "publish_at": "2026-11-11T23:30:00Z",
+      "youtube_id": "3RVR4ER6qLA",
+      "status": "PUBLISHED",
+      "scheduled_at": "2026-11-11T01:08:48.917643+00:00"
     }
   },
   "weekly_history": []
