@@ -1,0 +1,53 @@
+[
+  {
+    "slide": 1,
+    "type": "COVER",
+    "eyebrow": "DAILY US ECONOMIC BRIEFING",
+    "headline": "Last 24 Hours in US Money",
+    "date": "2026-11-12",
+    "subtitle": "3 key monetary shifts impacting your wallet today.",
+    "brand": "@WhereMyDollarGo"
+  },
+  {
+    "slide": 2,
+    "type": "METRIC",
+    "category": "MORTGAGE & HOUSING",
+    "headline": "Average 30-Year Fixed Mortgage at 6.62%",
+    "metric": "6.62%",
+    "delta": "-4 bps (week-over-week)",
+    "context": "Bond yields eased after recent Treasury debt auctions.",
+    "impact": "On a $400k loan, this rate holds monthly payments at ~$2,560, saving ~$65/mo compared to 6.87% peaks.",
+    "source": "Freddie Mac PMMS"
+  },
+  {
+    "slide": 3,
+    "type": "METRIC",
+    "category": "BANKING & CASH SAVINGS",
+    "headline": "Top High-Yield Savings Accounts Hold at 4.45% APY",
+    "metric": "4.45% APY",
+    "delta": "vs 0.07% Big-Box Checking",
+    "context": "Competitive digital institutions maintain high yields despite Fed pauses.",
+    "impact": "A $10,000 emergency fund earns ~$445/yr in passive yield vs less than $7 at traditional banks.",
+    "source": "FDIC National Average Rates"
+  },
+  {
+    "slide": 4,
+    "type": "METRIC",
+    "category": "CONSUMER GAS PUMP",
+    "headline": "National Average Gasoline at $3.12 / Gallon",
+    "metric": "$3.12 / gal",
+    "delta": "Stable across 42 states",
+    "context": "Crude oil is 52% of the price; taxes and refining make up 48%.",
+    "impact": "A 14-gallon fill-up costs $43.68, with $6.55 going to state and federal road maintenance trust funds.",
+    "source": "U.S. Energy Information Administration (EIA)"
+  },
+  {
+    "slide": 5,
+    "type": "CONCLUSION",
+    "headline": "Follow Your Dollar Daily",
+    "takeaway": "You don't need to track the stock ticker every minute. Just know where your money goes.",
+    "question": "Where is your primary emergency fund sitting right now?",
+    "disclaimer": "General education only. Not financial, tax, or legal advice.",
+    "brand": "@WhereMyDollarGo"
+  }
+]
