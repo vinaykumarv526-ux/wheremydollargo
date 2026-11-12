@@ -1,8 +1,8 @@
 {
   "channel_handle": "@WhereMyDollarGo",
   "initialized_at": "2026-11-10T01:40:00Z",
-  "next_topic_index": 7,
-  "last_run_utc": "2026-11-12T02:12:09.058244+00:00",
+  "next_topic_index": 8,
+  "last_run_utc": "2026-11-12T18:47:16.472887+00:00",
   "total_generated": 10,
   "scheduled_slots": {
     "2026-11-10_slot1": {
@@ -116,6 +116,15 @@
       "youtube_id": "7xflTO3HG6Y",
       "status": "PUBLISHED",
       "scheduled_at": "2026-11-12T02:12:09.058226+00:00"
+    },
+    "2026-11-13_slot1_Midday_Lunch_Peak_1230ET": {
+      "topic_id": "explainer_001_what_is_a_tax",
+      "title": "What is a Tax? (Explained in 40 Seconds)",
+      "style": "Stickman Explainer",
+      "publish_at": "2026-11-13T17:30:00Z",
+      "youtube_id": "TnBQkyaqRUU",
+      "status": "PUBLISHED",
+      "scheduled_at": "2026-11-12T18:47:16.472869+00:00"
     }
   },
   "weekly_history": []
