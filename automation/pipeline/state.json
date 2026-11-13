@@ -1,8 +1,8 @@
 {
   "channel_handle": "@WhereMyDollarGo",
   "initialized_at": "2026-11-10T01:40:00Z",
-  "next_topic_index": 9,
-  "last_run_utc": "2026-11-13T01:45:07.949549+00:00",
+  "next_topic_index": 10,
+  "last_run_utc": "2026-11-13T18:28:09.494564+00:00",
   "total_generated": 10,
   "scheduled_slots": {
     "2026-11-10_slot1": {
@@ -134,6 +134,15 @@
       "youtube_id": "-Gcv9bgtZBk",
       "status": "PUBLISHED",
       "scheduled_at": "2026-11-13T01:45:07.949530+00:00"
+    },
+    "2026-11-14_slot1_Midday_Lunch_Peak_1230ET": {
+      "topic_id": "explainer_003_what_is_a_trade",
+      "title": "What is a Trade in the Stock Market?",
+      "style": "Stickman Explainer",
+      "publish_at": "2026-11-14T17:30:00Z",
+      "youtube_id": "FBU84TwkVHQ",
+      "status": "PUBLISHED",
+      "scheduled_at": "2026-11-13T18:28:09.494547+00:00"
     }
   },
   "weekly_history": []
