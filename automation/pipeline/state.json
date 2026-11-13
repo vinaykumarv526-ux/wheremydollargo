@@ -1,8 +1,8 @@
 {
   "channel_handle": "@WhereMyDollarGo",
   "initialized_at": "2026-11-10T01:40:00Z",
-  "next_topic_index": 8,
-  "last_run_utc": "2026-11-12T18:47:16.472887+00:00",
+  "next_topic_index": 9,
+  "last_run_utc": "2026-11-13T01:45:07.949549+00:00",
   "total_generated": 10,
   "scheduled_slots": {
     "2026-11-10_slot1": {
@@ -125,6 +125,15 @@
       "youtube_id": "TnBQkyaqRUU",
       "status": "PUBLISHED",
       "scheduled_at": "2026-11-12T18:47:16.472869+00:00"
+    },
+    "2026-11-13_slot2_Evening_Prime_Peak_1830ET": {
+      "topic_id": "explainer_002_what_is_stock_market",
+      "title": "What is the Stock Market? (The Pizza Analogy)",
+      "style": "Stickman Explainer",
+      "publish_at": "2026-11-13T23:30:00Z",
+      "youtube_id": "-Gcv9bgtZBk",
+      "status": "PUBLISHED",
+      "scheduled_at": "2026-11-13T01:45:07.949530+00:00"
     }
   },
   "weekly_history": []
