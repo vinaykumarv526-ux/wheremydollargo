@@ -1,25 +1,29 @@
-# 📊 WhereMyDollarGo: Weekly Executive Report (2026-11-10)
+# 📊 WhereMyDollarGo: Weekly Executive Report (2026-11-15)
 
 ## 1. System Health & Autonomous Status
 - **Cloud Pipeline**: Online & Active (GitHub Actions)
 - **Channel**: `@WhereMyDollarGo`
-- **Total Content Slots Managed**: 10
-- **Videos Published to YouTube**: 8
-- **Ready in Publish Queue**: 2
+- **Total Content Slots Managed**: 21
+- **Videos Published to YouTube**: 18
+- **Ready in Publish Queue**: 3
 
 ## 2. Recent Production Slots & Visual Styles
 | Slot Date | Title | Visual Style | Status |
 |---|---|---|---|
-| 2026-11-10 | Where Does $100 of Your Paycheck Actually Go? | Isometric Infographic | 📦 Staged in Repo |
-| 2026-11-09 | Where Does $100 of Gas Money Actually Go? | Data Storytelling | 📦 Staged in Repo |
-| short_001_ | Where Does  of Your Paycheck Actually Go? | None | ✅ Live on YouTube |
-| short_002_ | Where Does  of Gas Money Actually Go? | None | ✅ Live on YouTube |
-| short_003_ | Deductible vs Out-of-Pocket Max in 40 Seconds | None | ✅ Live on YouTube |
-| explainer_ | What is a Tax? (Explained in 40 Seconds) | None | ✅ Live on YouTube |
-| explainer_ | What is the Stock Market? (The Pizza Analogy) | None | ✅ Live on YouTube |
 | explainer_ | What is a Trade in the Stock Market? | None | ✅ Live on YouTube |
 | explainer_ | How a Trade is Actually Done (Behind the Scenes) | None | ✅ Live on YouTube |
 | deep_dive_ | How Money is Actually Created (The Fractional Reserve System) (Full Deep Dive) | None | ✅ Live on YouTube |
+| 2026-11-10 | What is a Trade in the Stock Market? | Animated Explainer | ✅ Live on YouTube |
+| 2026-11-11 | What is a Trade in the Stock Market? | Stickman Explainer | 📦 Staged in Repo |
+| 2026-11-11 | How a Trade is Actually Done (Behind the Scenes) | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-12 | What is Inflation? (The Candy Bar Rule) | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-12 | How Does Money Actually Work? (The Truth in 30 Seconds) | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-13 | What is a Tax? (Explained in 40 Seconds) | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-13 | What is the Stock Market? (The Pizza Analogy) | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-14 | What is a Trade in the Stock Market? | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-14 | How a Trade is Actually Done (Behind the Scenes) | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-15 | What is Inflation? (The Candy Bar Rule) | Stickman Explainer | ✅ Live on YouTube |
+| 2026-11-15 | How Does Money Actually Work? (The Truth in 30 Seconds) | Stickman Explainer | ✅ Live on YouTube |
 
 ## 3. Next Week's Upcoming Queue
 The autonomous pipeline has pre-loaded upcoming finance topics in `topics.json`.
