@@ -31,3 +31,4 @@ Rule: **Never reuse a visual style within the last 20 videos.**
 | Auto | 2026-11-19 | What is the Stock Market? (The Pizza Analogy) | Stickman Explainer | 9:16 (Short) | Staged Peak |
 | Auto | 2026-11-20 | What is a Trade in the Stock Market? | Stickman Explainer | 9:16 (Short) | Staged Peak |
 | Auto | 2026-11-20 | How a Trade is Actually Done (Behind the Scenes) | Stickman Explainer | 9:16 (Short) | Staged Peak |
+| Auto | 2026-11-21 | What is Inflation? (The Candy Bar Rule) | Stickman Explainer | 9:16 (Short) | Staged Peak |
