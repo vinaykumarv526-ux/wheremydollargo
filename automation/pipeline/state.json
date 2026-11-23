@@ -1,8 +1,8 @@
 {
   "channel_handle": "@WhereMyDollarGo",
   "initialized_at": "2026-11-10T01:40:00Z",
-  "next_topic_index": 29,
-  "last_run_utc": "2026-11-23T01:29:05.103286+00:00",
+  "next_topic_index": 30,
+  "last_run_utc": "2026-11-23T22:32:54.093130+00:00",
   "total_generated": 10,
   "scheduled_slots": {
     "2026-11-10_slot1": {
@@ -314,6 +314,15 @@
       "youtube_id": null,
       "status": "STAGED",
       "scheduled_at": "2026-11-23T01:29:05.103276+00:00"
+    },
+    "2026-11-24_slot1_Midday_Lunch_Peak_1230ET": {
+      "topic_id": "explainer_005_what_is_inflation",
+      "title": "What is Inflation? (The Candy Bar Rule)",
+      "style": "Stickman Explainer",
+      "publish_at": "2026-11-24T17:30:00Z",
+      "youtube_id": null,
+      "status": "STAGED",
+      "scheduled_at": "2026-11-23T22:32:54.093113+00:00"
     }
   },
   "weekly_history": []
