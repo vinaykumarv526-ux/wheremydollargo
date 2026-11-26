@@ -140,13 +140,14 @@ def maintain_schedule_buffer(max_to_process=1):
     print(f"\n==========================================")
     print(f"Target US Peak Slots for 2-Day Buffer:")
     for s in target_slots:
-        status = "SCHEDULED" if s["id"] in scheduled_slots else "MISSING"
+        has_yt = s["id"] in scheduled_slots and scheduled_slots[s["id"]].get("youtube_id")
+        status = "SCHEDULED" if has_yt else ("STAGED_OFFLINE" if s["id"] in scheduled_slots else "MISSING")
         print(f"  [{status}] {s['id']} -> {s['iso']}")
     print(f"==========================================\n")
 
-    unfilled = [s for s in target_slots if s["id"] not in scheduled_slots]
+    unfilled = [s for s in target_slots if s["id"] not in scheduled_slots or not scheduled_slots[s["id"]].get("youtube_id")]
     if not unfilled:
-        print("Buffer is full! All upcoming 2-day peak slots are prepared.")
+        print("Buffer is full! All upcoming 2-day peak slots are active and scheduled on YouTube.")
         return
 
     # Run daily carousel generation
@@ -162,10 +163,15 @@ def maintain_schedule_buffer(max_to_process=1):
     print(f"Processing {len(to_process)} peak slot(s)...")
 
     for slot in to_process:
-        topic = topics[next_idx % len(topics)]
-        next_idx += 1
+        if slot["id"] in scheduled_slots:
+            slot_entry = scheduled_slots[slot["id"]]
+            topic_id = slot_entry.get("topic_id")
+            topic = next((t for t in topics if t["id"] == topic_id), topics[next_idx % len(topics)])
+        else:
+            topic = topics[next_idx % len(topics)]
+            next_idx += 1
 
-        style_name = topic.get("style", "Animated Explainer")
+        style_name = topic.get("style", "Stickman Explainer")
         print(f"\n--- Staging Peak Slot: {slot['id']} ({slot['iso']}) ---")
         print(f"Topic: {topic['title']} [{style_name}]")
 
