@@ -41,3 +41,6 @@ Rule: **Never reuse a visual style within the last 20 videos.**
 | Auto | 2026-11-24 | How Does Money Actually Work? (The Truth in 30 Seconds) | Stickman Explainer | 9:16 (Short) | Staged Peak |
 | Auto | 2026-11-25 | What is a Tax? (Explained in 40 Seconds) | Stickman Explainer | 9:16 (Short) | Staged Peak |
 | Auto | 2026-11-26 | What is the Stock Market? (The Pizza Analogy) | Stickman Explainer | 9:16 (Short) | Staged Peak |
+| Auto | 2026-11-27 | What is a Trade in the Stock Market? | Stickman Explainer | 9:16 (Short) | Staged Peak |
+| Auto | 2026-11-27 | How a Trade is Actually Done (Behind the Scenes) | Stickman Explainer | 9:16 (Short) | Staged Peak |
+| Auto | 2026-11-28 | What is Inflation? (The Candy Bar Rule) | Stickman Explainer | 9:16 (Short) | Staged Peak |
