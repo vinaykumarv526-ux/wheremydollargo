@@ -1,8 +1,8 @@
 {
   "channel_handle": "@WhereMyDollarGo",
   "initialized_at": "2026-11-10T01:40:00Z",
-  "next_topic_index": 36,
-  "last_run_utc": "2026-11-27T04:43:02.457254+00:00",
+  "next_topic_index": 37,
+  "last_run_utc": "2026-11-27T19:52:39.890761+00:00",
   "total_generated": 10,
   "scheduled_slots": {
     "2026-11-10_slot1": {
@@ -377,6 +377,15 @@
       "youtube_id": "yiFs42ESYM8",
       "status": "PUBLISHED",
       "scheduled_at": "2026-11-27T04:43:02.457229+00:00"
+    },
+    "2026-11-28_slot2_Evening_Prime_Peak_1830ET": {
+      "topic_id": "explainer_000_how_money_works_stickman",
+      "title": "How Does Money Actually Work? (The Truth in 30 Seconds)",
+      "style": "2D Flat Architectural Explainer",
+      "publish_at": "2026-11-28T23:30:00Z",
+      "youtube_id": "dET5dWpITjU",
+      "status": "PUBLISHED",
+      "scheduled_at": "2026-11-27T19:52:39.890740+00:00"
     }
   },
   "weekly_history": []
