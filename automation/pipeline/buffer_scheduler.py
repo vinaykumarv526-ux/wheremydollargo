@@ -180,26 +180,32 @@ def maintain_schedule_buffer(max_to_process=1):
         rendered_mp4 = pkg_dir / "video.mp4"
         yt_id = None
 
-        # Autonomously render video in Stickonomics stickman style
-        if not rendered_mp4.exists() and "scenes" in topic:
+        # Autonomously render video using 2D Flat Architectural Explainer Engine
+        if not rendered_mp4.exists():
             try:
                 import sys
                 sys.path.append(str(ROOT / "automation"))
-                from stickman_engine import render_stickman_video
-                print(f"Autonomously rendering Stickonomics explainer video for {topic['id']}...")
-                render_stickman_video(topic, rendered_mp4)
-            except Exception as e:
-                print(f"Stickman video render failed, trying fallback: {e}")
-                try:
-                    from video_engine import render_short_video
-                    render_short_video(
-                        topic_id=f"{slot['id']}_{topic['id']}",
-                        script_text=topic.get("script", topic.get("hook", "")),
-                        scenes_spec=topic["scenes"],
-                        output_mp4=rendered_mp4
-                    )
-                except Exception as e2:
-                    print(f"Fallback render notice: {e2}")
+                from architectural_engine import render_architectural_video
+                print(f"Autonomously rendering 2D Flat Architectural Explainer for {topic['id']}...")
+                render_architectural_video(topic, rendered_mp4)
+            except Exception as e_arch:
+                print(f"Architectural engine notice ({e_arch}), trying fallback renderer...")
+                if "scenes" in topic:
+                    try:
+                        from stickman_engine import render_stickman_video
+                        render_stickman_video(topic, rendered_mp4)
+                    except Exception as e_stick:
+                        print(f"Stickman video render failed, trying video_engine: {e_stick}")
+                        try:
+                            from video_engine import render_short_video
+                            render_short_video(
+                                topic_id=f"{slot['id']}_{topic['id']}",
+                                script_text=topic.get("script", topic.get("hook", "")),
+                                scenes_spec=topic["scenes"],
+                                output_mp4=rendered_mp4
+                            )
+                        except Exception as e2:
+                            print(f"Fallback render notice: {e2}")
 
         if rendered_mp4.exists():
             yt_id = upload_to_youtube(

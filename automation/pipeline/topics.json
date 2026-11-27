@@ -1,12 +1,13 @@
 {
   "channel": "@WhereMyDollarGo",
   "tagline": "Finance & Economics Explained in Plain English.",
-  "format": "Stickman Visual Explainer Series (Stickonomics Style)",
+  "format": "2D Flat Architectural Explainer Series (Inside Out Style)",
+  "default_style": "2D Flat Architectural Explainer",
   "topics": [
     {
       "id": "explainer_000_how_money_works_stickman",
       "title": "How Does Money Actually Work? (The Truth in 30 Seconds)",
-      "style": "Stickman Explainer",
+      "style": "2D Flat Architectural Explainer",
       "hook": "Have you ever wondered how money actually works, and why a green piece of paper has value?",
       "script": "Thousands of years ago, if you wanted fish, you had to trade apples. Money was invented as the universal middleman so everyone could trade easily! A dollar bill is just paper, but it works because all of society agrees on its value. Over time, inflation makes prices rise, meaning your dollars buy less. To beat inflation, don't just hold cash, invest it! Subscribe to WhereMyDollarGo for every dollar explained!",
       "scenes": [
@@ -136,7 +137,7 @@
         "wheremydollargo",
         "shorts"
       ],
-      "style": "Stickman Explainer"
+      "style": "2D Flat Architectural Explainer"
     },
     {
       "id": "explainer_002_what_is_stock_market",
@@ -197,7 +198,7 @@
         "wheremydollargo",
         "shorts"
       ],
-      "style": "Stickman Explainer"
+      "style": "2D Flat Architectural Explainer"
     },
     {
       "id": "explainer_003_what_is_a_trade",
@@ -257,7 +258,7 @@
         "investing101",
         "wheremydollargo"
       ],
-      "style": "Stickman Explainer"
+      "style": "2D Flat Architectural Explainer"
     },
     {
       "id": "explainer_004_how_a_trade_is_done",
@@ -317,7 +318,7 @@
         "fintech",
         "wheremydollargo"
       ],
-      "style": "Stickman Explainer"
+      "style": "2D Flat Architectural Explainer"
     },
     {
       "id": "explainer_005_what_is_inflation",
@@ -377,7 +378,7 @@
         "moneybasics",
         "wheremydollargo"
       ],
-      "style": "Stickman Explainer"
+      "style": "2D Flat Architectural Explainer"
     }
   ]
 }

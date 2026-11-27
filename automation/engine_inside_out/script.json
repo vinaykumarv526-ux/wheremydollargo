@@ -1,0 +1,46 @@
+{
+  "title": "What is a Tax?",
+  "voice": "en-US-ChristopherNeural",
+  "speed": 1.0,
+  "lead": 0.40,
+  "outro": 0.85,
+  "music": "bed",
+  "lines": [
+    {
+      "text": "Why does almost every country on Earth collect taxes?",
+      "caps": "WHY DO COUNTRIES | COLLECT *TAXES?"
+    },
+    {
+      "text": "Most people assume the government just takes your hard-earned money.",
+      "caps": "PEOPLE ASSUME | IT IS JUST *TAKEN"
+    },
+    {
+      "text": "Zero taxes sounds great, until roads crumble and emergency services crash.",
+      "caps": "ZERO TAXES COLLAPSES | THE WHOLE *SYSTEM"
+    },
+    {
+      "text": "Taxes are actually the shared subscription fee of a modern civilization.",
+      "caps": "TAXES ARE A SHARED | *SUBSCRIPTION FEE"
+    },
+    {
+      "text": "Every dollar flows through three main pipelines: income, sales, and property.",
+      "caps": "MONEY FLOWS THROUGH | THREE KEY *PIPELINES"
+    },
+    {
+      "text": "The engine redistributes that capital back into public security, clean water, and roads.",
+      "caps": "REDISTRIBUTED TO | STABILIZE *SOCIETY"
+    },
+    {
+      "text": "Inside the national budget, collective purchasing makes public services ten times cheaper.",
+      "caps": "COLLECTIVE BUDGETING | CUTS INDIVIDUAL *COSTS"
+    },
+    {
+      "text": "Pooling resources delivers over five trillion dollars in shared infrastructure.",
+      "caps": "FIVE TRILLION | IN SHARED *LEVERAGE"
+    },
+    {
+      "text": "So taxes are not a penalty, they are the engine that keeps modern society running.",
+      "caps": "NOT A PENALTY, | THE *ENGINE ITSELF"
+    }
+  ]
+}

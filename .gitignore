@@ -17,6 +17,9 @@ node_modules/
 
 # Local Renders and Temporary Runs
 renders/*.mp4
+automation/engine_inside_out/renders/*.mp4
+automation/engine_inside_out/data/*.wav
+automation/engine_inside_out/review/
 runs/
 .DS_Store
 Thumbs.db
