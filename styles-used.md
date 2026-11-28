@@ -45,3 +45,4 @@ Rule: **Never reuse a visual style within the last 20 videos.**
 | Auto | 2026-11-27 | How a Trade is Actually Done (Behind the Scenes) | Stickman Explainer | 9:16 (Short) | Staged Peak |
 | Auto | 2026-11-28 | What is Inflation? (The Candy Bar Rule) | Stickman Explainer | 9:16 (Short) | Staged Peak |
 | Auto | 2026-11-28 | How Does Money Actually Work? (The Truth in 30 Seconds) | 2D Flat Architectural Explainer | 9:16 (Short) | Staged Peak |
+| Auto | 2026-11-29 | What is a Tax? (Explained in 40 Seconds) | 2D Flat Architectural Explainer | 9:16 (Short) | Staged Peak |
